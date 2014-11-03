@@ -24,10 +24,12 @@
     					<li><a href="#" onclick="Aclick(this)" title="{$typeVal|default:''}" class="filter_lk">{$typeVal|default:''}</a></li>
     				{/foreach}
     			 	</ul>
+    			 	{if $typeValArray|@count >10}
                     <div class="type_more fr">
                         <span onclick="seeMore(this)" id="seeMore"><b></b>更多</span>
                         <span onclick="seeLess(this)" id="seeLess" style="display: none"><b></b>收起</span>
                     </div>
+                    {/if}
                 </dd>
            </dl>
             {/foreach}
