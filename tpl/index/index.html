@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fff="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <link rel="stylesheet" href="tpl/index/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="tpl/index/css/home.css" type="text/css">
+	<title>{$webName['configvalue']}</title> 
+</head>
+
+<body>
+<div class="f_Header" style="height: 60px;width: 100%;background-color:#45729B">
+</div>
+<div class="f_Body_filterArea comWidth">
+    <h3>电影筛选</h3>
+    	{foreach $configAll as $rowArray}
+    		 {foreach $rowArray as $typeStr=>$typeValArray}
+    		<dl class="filter_dl clearfix">
+    		 	<dt>{$typeStr}:</dt>   			
+    			<dd class="filterLimit"><a class="active" href="#">全部</a></dd>
+                <dd class="filter_dd" id="filter_dd">
+                    <ul>
+                    {foreach $typeValArray as $typeVal}
+    					<li><a href="#" onclick="Aclick(this)" title="{$typeVal|default:''}" class="filter_lk">{$typeVal|default:''}</a></li>
+    				{/foreach}
+    			 	</ul>
+                    <div class="type_more fr">
+                        <span onclick="seeMore(this)" id="seeMore"><b></b>更多</span>
+                        <span onclick="seeLess(this)" id="seeLess" style="display: none"><b></b>收起</span>
+                    </div>
+                </dd>
+           </dl>
+            {/foreach}
+    	{/foreach}
+</div>
+
+<div class="f_Body_SortByArea comWidth">
+    <span class="item_sortBy_number fl">共&nbsp;<b style="color:darkred">1000</b>&nbsp;部</span>
+    <span class="item_sortBy_title fl">排序：</span>
+    <ul>
+        <li><a href="#">更新日期↑↓</a></li>
+        <li><a href="#">上映日期↑↓</a></li>
+        <li><a href="#">影片名A-Z↑↓</a></li>
+        <li><a href="#">IMDB评分↑↓</a></li>
+        <li><a href="#">IMDB编号↑↓</a></li>
+    </ul>
+    <div class="item_sortBy_viewmode fr clearfix">
+        <a title="图片显示" href="javascript:void(0)" class="byBlock"  data-spm-anchor-id="0.0.0.0">图片显示</a>
+        <a title="列表显示" href="javascript:void(0)" class="byList"   data-spm-anchor-id="0.0.0.0">列表显示</a>
+    </div>
+</div>
+
+
+
+
+ <div class="f_Body_itemsArea comWidth clearfix ">
+                     <dl class="f_Body_itemsArea_dl clearfix">
+                         <dd class="f_Body_itemsArea_dl_dd">
+                             <ul class="f_Body_itemsArea_dl_dd_ul clearfix">                             
+                             		{foreach $mInfo as $movie}
+                                    <li><a href="admin.php?controller=admin&method=movieadd&id={$movie.uid}" target="_blank"><img src="img_imdb/tt0244316.jpg" alt="{$movie.mtitle}"/></a></li> 
+                                    {/foreach}                               
+                            </ul>
+                        </dd>
+                    </dl>
+</div>
+
+
+<div class="f_Footer fl" style="height:50px;width: 100%;background-color:#45729B" >
+
+</div>
+<script>
+    function seeMore(obj){
+    	var filter_dd=$(obj).parent().parent();
+    	filter_dd.height('auto');
+    	
+    	$(obj).hide();
+
+        var seeLess=$(obj).parent().find("span[id='seeLess']");
+        seeLess.show();
+    };
+    function seeLess(obj){
+        var filter_dd=$(obj).parent().parent();
+    	filter_dd.height('15px');
+
+    	$(obj).hide();
+        
+        var seeLess=$(obj).parent().find("span[id='seeMore']");
+        seeLess.show();
+    };
+
+    function Aclick(obj){
+    	$(obj).attr('class','active');
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fff="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <link rel="stylesheet" href="css/director.css" type="text/css">
+    <style type="text/css">
+        #memu{
+            position: fixed;
+            left: 50%;
+            top: 100px;
+            margin-left: 300px;
+        }
+
+        #memu ul{
+            list-style: none;
+        }
+
+        #memu ul li a{
+            display: block;
+            margin: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #0479CA;
+            text-decoration: none;
+        }
+        #memu ul li a:hover,
+        #memu ul li a.current{
+            background-color: #0479CA;
+            color: #FFF;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var memu=$("#memu");
+            memu.addClass("hide");
+            $(window).scroll(function(){
+                var top=$(document).scrollTop();
+                var items=$("#content").find(".scrollItem");
+                var memu=$("#memu");
+                var currentID="";
+                items.each(function(){
+                    var curDiv=$(this);
+                    var itemTop=curDiv.offset().top;
+                    if ( top>itemTop-200) {
+                        //当前div的ID
+                        currentID="#"+curDiv.attr('id');
+                    }else{
+                        return false;
+                    }
+                });
+                var memuCurA=memu.find(".current");
+                var memuCurID=memuCurA.attr('href');
+                console.log(currentID+"-"+memuCurID);
+                if(currentID && memuCurID!=currentID){
+                    memu.removeClass("hide");
+                    memuCurA.removeClass("current");
+                    memu.find("[href="+currentID+"]").addClass("current");
+                }
+            });
+        });
+
+
+
+    </script>
+
+<title>电影-导演-杨德昌</title>
+</head>
+
+<body class="clearfix">
+<div class="f_Header "  style="height: 60px;width: 100%;background-color:#45729B">
+</div>
+
+<div id="memu">
+    <ul>
+        <li><a href="#f1" class="current" >1楼</a></li>
+        <li><a href="#f2">2楼</a></li>
+        <li><a href="#f3">3楼</a></li>
+        <li><a href="#f4">4楼</a></li>
+        <li><a href="#f5">5楼</a></li>
+    </ul>
+</div>
+
+<div class="director clearfix comWidth" >
+    <div class="director_content" id="content">
+
+            <div class="director_contentBody scrollItem" id="f1">
+                <h1>杨德昌<span>（台湾著名导演）</span></h1>
+                <div class="clear"></div>
+                <div class="director_intro">
+                    <p>杨德昌（Edward Yang，1947年11月6日－2007年6月29日），台湾电影导演，与侯孝贤、蔡明亮并称台湾电影新浪潮代表导演。</p>
+                </div>
+                <div class="director_card">
+                    <div class="card fl">
+                        <div class="cardItem">
+                            <span>中文名</span>
+                            <div>杨德昌</div>
+                        </div>
+                        <div class="cardItem">
+                            <span>外文名</span>
+                            <div>Edward Yang</div>
+                        </div>
+                        <div class="cardItem">
+                            <span>地区</span>
+                            <div>台湾</div>
+                        </div>
+                        <div class="cardItem">
+                            <span>出生日期</span>
+                            <div>1947年11月6日</div>
+                        </div>
+
+
+                    </div>
+                    <div class="card fl">
+
+                        <div class="cardItem">
+                            <span>职业</span>
+                            <div>导演、编剧</div>
+                        </div>
+                        <div class="cardItem">
+                            <span>民族</span>
+                            <div>汉族</div>
+                        </div>
+                        <div class="cardItem">
+                            <span>毕业院校</span>
+                            <div>国立交通大学，佛罗里达大学</div>
+                        </div>
+                        <div class="cardItem">
+                            <span>逝世日期</span>
+                            <div>2007年6月29日</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+        </div>
+        <div class="director_story scrollItem" id="f2">
+            <div class="director_left_title">
+                <span class="titleblock"></span>
+                <h3>人物简介</h3>
+            </div>
+            <p>广东梅州人，生于上海，成长于台北，1965年毕业于台北建国中学，1969年毕业于新竹国立交通大学控制工程系（后改名电机与控制工程学系，2009年与电信工程学系合并为电机工程学系）。后赴美国，1974年在佛罗里达大学获电机工程硕士。之后南加州大学学习研究电影一年，杨德昌后来以电脑工程师身份往美国西雅图华盛顿大学（University of Washington, Seattle，简称UW）从事计算机微处理器与软件设计，并在那里工作了7年。在西雅图，杨德昌从德国新电影得到很大启示——尤其德国新电影四杰之一韦纳·荷索的《阿基尔，上帝的愤怒》，因为他证明精彩的电影可以一个人做而不必倚赖巨大投资，或者更直观的说让杨德昌明白了电影原来可以这样拍。</p>
+            <p>1981年回到台湾，与詹宏志、余为彦、徐克等人参与独立制作《1905年的冬天》，担任编剧及演员，此片后来入选戛纳影展“一种注目”单元。随后参加张艾嘉制作的台视节目“十一个女人”系列剧集，导演其中“浮萍”单元，颇受好评。1982年，被中影启用为导演，与柯一正、张毅、陶德辰合拍《光阴的故事》，由于本片在各方面的创新尝试，让他与侯孝贤齐名，被公认为“台湾新电影”重要先驱之一。1983年创作其第一部剧情长片《海滩的一天》，以复杂的叙事结构，讨论社会转型中的女性议题及转型后的都会空间对人的影响，引起诸多讨论，也被认为是引进台湾新电影最重要的一部电影之一，虽然片长远超过传统电影的放映时间（二小时四十七分），但是在杨德昌的坚持下，原片一刀未剪，创下先例。</p>
+            <p>1985年的《青梅竹马》，探讨台湾社会转型过程中的男女心理。1986年拍摄《恐怖份子》，以其特殊的叙事风格，及对现代都市中人们深刻的观察，获得国际许多奖项的肯定。1989年成立“杨德昌电影公司”，1991年拍摄《牯岭街少年杀人事件》引起广大的讨论，杨德昌更被日本“电影旬报”选为年度电影奖的最佳外国导演。1993年将电影公司更名为“原子电影公司”，1994年的《独立时代》获得第三十一届金马奖最佳原著剧本奖。1996年拍摄《麻将》，获得柏林影展评审团特别奖。2000年的《一一》，承续以往擅长的多条叙述线、理性思辩的叙述风格，深刻检视当代的台北都会，更为他夺得至高荣誉的戛纳影展最佳导演奖，成为目前为止，唯一获得这项殊荣的台湾籍导演。</p>
+            <p>杨德昌的电影主要描绘台北城市在生活型态转变下，中国人中产阶级的感情生活，运镜笔触细腻，与侯孝贤的乡土电影形成鲜明对比。</p>
+            <p>杨德昌和妻子彭铠立在企业出资下，共同成立经营铠甲娱乐科技公司，进军网络动画事业。杨德昌病逝后，彭铠立便辞去执行长职务。2007年6月29日下午杨德昌（美西时间）因结肠癌于美国洛杉矶比佛利山庄去世，享年59岁。杨德昌和病魔对抗的最后一段日子，其实一直没有放弃创作，除了和影星成龙合作的动画“追风”没机会完成，杨德昌忍着病痛，又构思出一部动画新片，片名叫做“小朋友”，他在过世前，将手稿寄给好友张毅，妻子彭铠立也向张毅透露，杨德昌过世前，手还握著画笔。</p>
+        </div>
+        <div class="director_story scrollItem" id="f3">
+            <div class="director_left_title">
+                <span class="titleblock"></span>
+                <h3>家&nbsp;&nbsp;庭</h3>
+            </div>
+           <p>杨德昌与台湾歌手蔡琴曾有过十年婚姻，但由于杨德昌外遇，结果以离婚收场。第二任妻子是杨德昌的外遇对象，也就是钢琴家彭铠立，两人育有一子。</p>
+
+        </div>
+        <div class="director_story scrollItem"  id="f4">
+            <div class="director_left_title">
+                <span class="titleblock"></span>
+                <h3>演艺作品</h3>
+            </div>
+
+            <p>1982年《光阴的故事》第二段‘指望’</p>
+            <p>1983年《海滩的一天》</p>
+            <p>1985年《青梅竹马》（Taipei Story）（与朱天文、侯孝贤合作）</p>
+            <p>1986年《恐怖份子》（与小野合作）</p>
+            <p>1991年《牯岭街少年杀人事件》</p>
+            <p>1994年《独立时代》（与阎鸿亚合作）</p>
+            <p>1996年《麻将》（Mahjong；Couples)</p>
+            <p>2000年《一一》(Yi Yi: A One and a Two)</p>
+            <p>2007年《追风》中断拍摄</p>
+            <p>2007年《长江动物园》（接近完成）</p>
+            <p>2007年《小朋友》，（创意阶段）</p>
+
+        </div>
+        <div class="director_story scrollItem"  id="f5">
+            <div class="director_left_title">
+                <span class="titleblock"></span>
+                <h3>荣誉成就</h3>
+            </div>
+
+            <p>金马奖：1994年，《独立时代》：最佳原著剧本（杨德昌）、最佳男配角（王柏森）、最佳女配角（金燕玲）；1991年，《牯岭街少年杀人事件》：最佳影片、最佳原著剧本（杨德昌、阎鸿亚、杨顺清、赖铭堂）；1986年，《恐怖份子》：最佳影片。</p>
+            <p>亚太影展：1991年，最佳影片《牯岭街少年杀人事件》；1987年 最佳电影剧本《恐怖份子》</p>
+            <p>戛纳影展：2000年，最佳导演，《<a href="film2.html" target="_blank">一一</a>》</p>
+            <p>卢卡诺影展：1987年 银豹奖，《恐怖份子》</p>
+            <p>芝加哥电影评论协会奖：2001年，协会奖（CFCA Award），《一一》</p>
+            <p>美国国家影评人协会（NSFC Award）：2000年，最佳影片、最佳外语片，《一一》</p>
+            <p>纽约影评人协会（NYFCC Award）：2000年，最佳外语片，《一一》</p>
+            <p>洛杉矶影评人协会（LAFCA Award）：2000年，最佳外语片，《一一》</p>
+
+        </div>
+
+    </div>
+    <div class="director_sidebar">
+        <div class="basicInformation">
+            <div class="card-img ">
+                <a href="#"  target="_blank">
+                    <img  title="杨德昌" src="img/ydc.jpg" alt="杨德昌" >
+                </a>
+            </div>
+            <a href="/album/41649/8954327?fr=lemma"><span></span>杨德昌图册</a>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</body>
+</html>
