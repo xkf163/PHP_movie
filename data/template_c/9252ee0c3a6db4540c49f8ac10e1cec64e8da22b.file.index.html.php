@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-03 13:07:05
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-03 13:27:53
          compiled from "tpl\index\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:188865450762b500a30-41478977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9252ee0c3a6db4540c49f8ac10e1cec64e8da22b' => 
     array (
       0 => 'tpl\\index\\index.html',
-      1 => 1415016420,
+      1 => 1415017656,
       2 => 'file',
     ),
   ),
@@ -115,7 +115,7 @@ $_smarty_tpl->tpl_vars['typeVal']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['movie']->key => $_smarty_tpl->tpl_vars['movie']->value) {
 $_smarty_tpl->tpl_vars['movie']->_loop = true;
 ?>
-                                    <li><a href="admin.php?controller=admin&method=movieadd&id=<?php echo $_smarty_tpl->tpl_vars['movie']->value['uid'];?>
+                                    <li><a href="show.php?controller=show&method=show&id=<?php echo $_smarty_tpl->tpl_vars['movie']->value['uid'];?>
 " target="_blank"><img src="img_imdb/tt0244316.jpg" alt="<?php echo $_smarty_tpl->tpl_vars['movie']->value['mtitle'];?>
 "/></a></li> 
                                     <?php } ?>                               
