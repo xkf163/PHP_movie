@@ -77,18 +77,16 @@
     	filter_dd.height('auto');
     	
     	$(obj).hide();
-
-        var seeLess=$(obj).parent().find("span[id='seeLess']");
-        seeLess.show();
+        $(obj).parent().find("span[id='seeLess']").show();
+        
     };
     function seeLess(obj){
         var filter_dd=$(obj).parent().parent();
     	filter_dd.height('15px');
 
     	$(obj).hide();
+        $(obj).parent().find("span[id='seeMore']").show();
         
-        var seeLess=$(obj).parent().find("span[id='seeMore']");
-        seeLess.show();
     };
 
     function Aclick(obj){

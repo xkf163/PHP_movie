@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-03 12:27:15
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-03 13:04:05
          compiled from "tpl\index\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:188865450762b500a30-41478977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9252ee0c3a6db4540c49f8ac10e1cec64e8da22b' => 
     array (
       0 => 'tpl\\index\\index.html',
-      1 => 1415014032,
+      1 => 1415016242,
       2 => 'file',
     ),
   ),
@@ -136,18 +136,16 @@ $_smarty_tpl->tpl_vars['movie']->_loop = true;
     	filter_dd.height('auto');
     	
     	$(obj).hide();
-
-        var seeLess=$(obj).parent().find("span[id='seeLess']");
-        seeLess.show();
+        $(obj).parent().find("span[id='seeLess']").show();
+        
     };
     function seeLess(obj){
         var filter_dd=$(obj).parent().parent();
     	filter_dd.height('15px');
 
     	$(obj).hide();
+        $(obj).parent().find("span[id='seeMore']").show();
         
-        var seeLess=$(obj).parent().find("span[id='seeMore']");
-        seeLess.show();
     };
 
     function Aclick(obj){
