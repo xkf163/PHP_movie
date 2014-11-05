@@ -76,7 +76,7 @@
 	{include file='admin/leftmenu.html'}
 	
 	<section id="main" class="column">
-		<form id="form1" name="form1" method="post" action="admin.php?controller=admin&method=movieadd">
+		<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="admin.php?controller=admin&method=movieadd">
 			<article class="module width_full">
 				<header><h3>添加新电影</h3></header>
 					<div class="module_content">
@@ -165,8 +165,10 @@
 								<label>修改时间</label>
 								<input type="text" name="mmodifydate" style="width:92%;" value="{$data.mmodifydate|default:''}">
 							</fieldset>
-							
-							
+							<fieldset>		
+                                 <input name="attachment" type="file"/>
+
+							</fieldset>
 							<div class="clear"></div>
 					</div>
 				<footer>

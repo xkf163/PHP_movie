@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="tpl/index/css/reset.css" type="text/css">
     <link rel="stylesheet" href="tpl/index/css/home.css" type="text/css">
     <link rel="stylesheet" href="tpl/index/css/show.css" type="text/css">
-<title>{$data.mtitle}</title>
+<title>{$mtitle[0]}</title>
 </head>
 <body class="clearfix">
 <div class="f_Header "  style="height: 60px;width: 100%;background-color:#45729B">
@@ -17,14 +17,14 @@
     </div>-->
     <div class="filmHeader comWidth clearfix">
         <div class="filmHeader_img fl">
-            <img src="tpl/index/img_imdb/tt0244316.jpg" alt=""/>
+            <img src="{$imgpath[0]}" alt=""/>
         </div>
         <div class="filmHeader_info fl">
               <div class="filmHeader_info_top clearfix" >
                   <div class="title_year fr">
-                      <span class="title">{$data.mtitle}&nbsp;</span><span>(</span></span><span class="year"><a href="#">{$data.myear}</a></span><span>)</span>
+                      <span class="title">{$mtitle[0]}&nbsp;</span><span>(</span></span><span class="year"><a href="#">{$myear[0]}</a></span><span>)</span>
                   </div>
-                  <div class="rate fr">{$data.mrating}</div>
+                  <div class="rate fr">{$mrating[0]}</div>
               </div>
             <div class="pg_time_type clearfix">
                 <dl class="item">
@@ -41,10 +41,9 @@
                     <dt><span>类型:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">剧情</a><i>|</i></li>
-                            <li><a>爱情</a><i>|</i></li>
-                            <li><a href="#">家庭</a></li>
-
+                        {foreach $mcategory as $category}                        
+                        	<li><a href="#">{$category}</a><i>|</i></li>                            
+						{/foreach}
                         </ul>
                     </dd>
                 </dl>
@@ -52,7 +51,9 @@
                     <dt><span>导演:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="director.html" target="_blank">{$data.mdirector}</a></li>
+                        	{foreach $mdirector as $director }
+                            <li><a href="director.html" target="_blank">{$director}</a><i>|</i></li>
+                            {/foreach}
                         </ul>
                     </dd>
                 </dl>
@@ -60,7 +61,7 @@
                     <dt><span>编剧:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="director.html" target="_blank">{$data.mwriter}</a></li>
+                            <li><a href="director.html" target="_blank">{$mwriter[0]}</a><i>|</i></li>
                         </ul>
                     </dd>
                 </dl>
@@ -77,12 +78,9 @@
                     <dt><span>主要演员:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">吴念真</a><i>|</i></li>
-                            <li><a href="#">李凯莉</a><i>|</i></li>
-                            <li><a href="#">金燕玲</a><i>|</i></li>
-                            <li><a href="#">张洋洋</a><i>|</i></li>
-                            <li><a href="#">萧淑慎</a><i>|</i></li>
-                            <li><a href="#">尾形一成</a></li>
+                        {foreach $mcast as $cast }
+                            <li><a href="#">{$cast}</a><i>|</i></li>
+                         {/foreach}
                         </ul>
                     </dd>
                 </dl>
@@ -121,7 +119,7 @@
                     <dt><span>片长:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li>173<i>分钟</i></li>
+                            <li>{$mtime[0]}<i>分钟</i></li>
                         </ul>
                     </dd>
                 </dl>
@@ -131,7 +129,7 @@
                     <dt><span>分级:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">PG-13</a></li>
+                            <li><a href="#">{$mlevel[0]}</a></li>
                         </ul>
                     </dd>
                 </dl>
@@ -139,7 +137,7 @@
                     <dt><span>色彩:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">彩色</a></li>
+                            <li><a href="#">{$mcolor[0]}</a></li>
                         </ul>
                     </dd>
                 </dl>
@@ -155,7 +153,7 @@
                     <dt><span>IMDB编号:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">tt0244316</a></li>
+                            <li><a href="#">tt{$imdb[0]}</a></li>
                         </ul>
                     </dd>
                 </dl>

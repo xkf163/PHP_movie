@@ -4,7 +4,14 @@ class showController{
 		if($_GET['id']){
 			$movieObj=M('movie');
 			$data=$movieObj->getMVinfo($_GET['id']);
-			VIEW::assign(array('data'=>$data));
+
+			foreach($data as $fieldName=>$fieldValue){
+				$dataNew[$fieldName]=explode("、", $fieldValue);
+			}
+
+			//var_dump($dataNew);
+			VIEW::assign($dataNew);
+			//VIEW::assign(array('data'=>$data));
 			VIEW::display('index/show.html');
 		}
 	}

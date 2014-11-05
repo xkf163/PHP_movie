@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-29 07:46:10
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-05 14:24:41
          compiled from "tpl\admin\newsadd.html" */ ?>
 <?php /*%%SmartyHeaderCode:2987654508d32869aa2-98326612%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ae385eb64f7854e5454fe1d15f2014e6f0fb3b5' => 
     array (
       0 => 'tpl\\admin\\newsadd.html',
-      1 => 1414499187,
+      1 => 1415193656,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_54508d32a8c8a5_11612738',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_54508d32a8c8a5_11612738',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54508d32a8c8a5_11612738')) {function content_54508d32a8c8a5_11612738($_smarty_tpl) {?><!doctype html>
 <html>
@@ -120,7 +120,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 	
 	<section id="main" class="column">
-		<form id="form1" name="form1" method="post" action="admin.php?controller=admin&method=movieadd">
+		<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="admin.php?controller=admin&method=movieadd">
 			<article class="module width_full">
 				<header><h3>添加新电影</h3></header>
 					<div class="module_content">
@@ -228,8 +228,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<input type="text" name="mmodifydate" style="width:92%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mmodifydate'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							
-							
+							<fieldset>		
+                                 <input name="attachment" type="file"/>
+
+							</fieldset>
 							<div class="clear"></div>
 					</div>
 				<footer>

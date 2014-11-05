@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-04 03:17:07
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-05 15:43:26
          compiled from "tpl\index\show.html" */ ?>
 <?php /*%%SmartyHeaderCode:29835545774cd5a0d19-52258545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f84b874cbbe1a424c81f4421bc4f4a277ad694b9' => 
     array (
       0 => 'tpl\\index\\show.html',
-      1 => 1415067424,
+      1 => 1415198605,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_545774cd5eef28_52569928',
   'variables' => 
   array (
-    'data' => 0,
+    'mtitle' => 0,
+    'imgpath' => 0,
+    'myear' => 0,
+    'mrating' => 0,
+    'mcategory' => 0,
+    'category' => 0,
+    'mdirector' => 0,
+    'director' => 0,
+    'mwriter' => 0,
+    'mcast' => 0,
+    'cast' => 0,
+    'mtime' => 0,
+    'mlevel' => 0,
+    'mcolor' => 0,
+    'imdb' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -30,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link rel="stylesheet" href="tpl/index/css/reset.css" type="text/css">
     <link rel="stylesheet" href="tpl/index/css/home.css" type="text/css">
     <link rel="stylesheet" href="tpl/index/css/show.css" type="text/css">
-<title><?php echo $_smarty_tpl->tpl_vars['data']->value['mtitle'];?>
+<title><?php echo $_smarty_tpl->tpl_vars['mtitle']->value[0];?>
 </title>
 </head>
 <body class="clearfix">
@@ -43,16 +57,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>-->
     <div class="filmHeader comWidth clearfix">
         <div class="filmHeader_img fl">
-            <img src="tpl/index/img_imdb/tt0244316.jpg" alt=""/>
+            <img src="<?php echo $_smarty_tpl->tpl_vars['imgpath']->value[0];?>
+" alt=""/>
         </div>
         <div class="filmHeader_info fl">
               <div class="filmHeader_info_top clearfix" >
                   <div class="title_year fr">
-                      <span class="title"><?php echo $_smarty_tpl->tpl_vars['data']->value['mtitle'];?>
-&nbsp;</span><span>(</span></span><span class="year"><a href="#"><?php echo $_smarty_tpl->tpl_vars['data']->value['myear'];?>
+                      <span class="title"><?php echo $_smarty_tpl->tpl_vars['mtitle']->value[0];?>
+&nbsp;</span><span>(</span></span><span class="year"><a href="#"><?php echo $_smarty_tpl->tpl_vars['myear']->value[0];?>
 </a></span><span>)</span>
                   </div>
-                  <div class="rate fr"><?php echo $_smarty_tpl->tpl_vars['data']->value['mrating'];?>
+                  <div class="rate fr"><?php echo $_smarty_tpl->tpl_vars['mrating']->value[0];?>
 </div>
               </div>
             <div class="pg_time_type clearfix">
@@ -70,10 +85,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>类型:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">剧情</a><i>|</i></li>
-                            <li><a>爱情</a><i>|</i></li>
-                            <li><a href="#">家庭</a></li>
-
+                        <?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mcategory']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->_loop = true;
+?>                        
+                        	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['category']->value;?>
+</a><i>|</i></li>                            
+						<?php } ?>
                         </ul>
                     </dd>
                 </dl>
@@ -81,8 +100,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>导演:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['data']->value['mdirector'];?>
-</a></li>
+                        	<?php  $_smarty_tpl->tpl_vars['director'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['director']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mdirector']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['director']->key => $_smarty_tpl->tpl_vars['director']->value) {
+$_smarty_tpl->tpl_vars['director']->_loop = true;
+?>
+                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['director']->value;?>
+</a><i>|</i></li>
+                            <?php } ?>
                         </ul>
                     </dd>
                 </dl>
@@ -90,8 +115,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>编剧:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['data']->value['mwriter'];?>
-</a></li>
+                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['mwriter']->value[0];?>
+</a><i>|</i></li>
                         </ul>
                     </dd>
                 </dl>
@@ -108,12 +133,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>主要演员:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">吴念真</a><i>|</i></li>
-                            <li><a href="#">李凯莉</a><i>|</i></li>
-                            <li><a href="#">金燕玲</a><i>|</i></li>
-                            <li><a href="#">张洋洋</a><i>|</i></li>
-                            <li><a href="#">萧淑慎</a><i>|</i></li>
-                            <li><a href="#">尾形一成</a></li>
+                        <?php  $_smarty_tpl->tpl_vars['cast'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cast']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mcast']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['cast']->key => $_smarty_tpl->tpl_vars['cast']->value) {
+$_smarty_tpl->tpl_vars['cast']->_loop = true;
+?>
+                            <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['cast']->value;?>
+</a><i>|</i></li>
+                         <?php } ?>
                         </ul>
                     </dd>
                 </dl>
@@ -152,7 +179,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>片长:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li>173<i>分钟</i></li>
+                            <li><?php echo $_smarty_tpl->tpl_vars['mtime']->value[0];?>
+<i>分钟</i></li>
                         </ul>
                     </dd>
                 </dl>
@@ -162,7 +190,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>分级:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">PG-13</a></li>
+                            <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['mlevel']->value[0];?>
+</a></li>
                         </ul>
                     </dd>
                 </dl>
@@ -170,7 +199,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>色彩:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">彩色</a></li>
+                            <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['mcolor']->value[0];?>
+</a></li>
                         </ul>
                     </dd>
                 </dl>
@@ -186,7 +216,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <dt><span>IMDB编号:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">tt0244316</a></li>
+                            <li><a href="#">tt<?php echo $_smarty_tpl->tpl_vars['imdb']->value[0];?>
+</a></li>
                         </ul>
                     </dd>
                 </dl>

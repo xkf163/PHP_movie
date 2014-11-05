@@ -22,6 +22,9 @@ class movieModel{
 	
 	
 	function actionMSubmit($data){
+
+
+
 		extract($data);
 		if(empty($mtitle)||empty($myear)){
 			return 0;
@@ -50,7 +53,30 @@ class movieModel{
 		}
 		
 		$mmodifydate=date("Y:m:d H:m:s",time());
-		
+
+
+
+		//处理上传附件
+		 if($_FILES['attachment']){
+                    $uploaddir = 'D:/wamp2.5/www/movie/data/upload/cover/';
+                    $uploadfile = $uploaddir . basename($_FILES['attachment']['name']);
+                    $imgpath = 'data/upload/cover/'. basename($_FILES['attachment']['name']);
+
+                    echo '<pre>';
+                    if (move_uploaded_file($_FILES['attachment']['tmp_name'], $uploadfile)) {
+                        echo "File is valid, and was successfully uploaded.\n";
+                    } else {
+                        echo "Possible file upload attack!\n";
+                    }
+
+                    echo 'Here is some more debugging info:';
+                    print_r($_FILES);
+
+                    print "</pre>";
+                }
+
+
+
 		$data=array(
 				'mtitle'=>$mtitle,
 				'myear'=>$myear,
@@ -69,6 +95,7 @@ class movieModel{
 				'mcolor'=>$mcolor,
 				'mcreatedate'=>$mcreatedate,
 				'mmodifydate'=>$mmodifydate,
+				'imgpath'=>$imgpath,
 		);
 		//修改时id有值
 		if($_POST['id']!=""){
