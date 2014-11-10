@@ -166,8 +166,8 @@
 								<input type="text" name="mmodifydate" style="width:92%;" value="{$data.mmodifydate|default:''}">
 							</fieldset>
 							<fieldset>		
-                                 <input name="attachment" type="file"/>
-
+                                <input name="attachment" value="{$data.attachment|default:''}" type="file" />
+								<input name="attachment1" value="{$data.attachment|default:''}" type="text" />
 							</fieldset>
 							<div class="clear"></div>
 					</div>
