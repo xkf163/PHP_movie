@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 09:12:26
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 16:32:26
          compiled from "tpl\index\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:188865450762b500a30-41478977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9252ee0c3a6db4540c49f8ac10e1cec64e8da22b' => 
     array (
       0 => 'tpl\\index\\index.html',
-      1 => 1415607144,
+      1 => 1415633545,
       2 => 'file',
     ),
   ),
@@ -49,8 +49,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <h3>电影筛选</h3>
     	<?php  $_smarty_tpl->tpl_vars['rowArray'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rowArray']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['configAll']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['rowArray']->index=-1;
 foreach ($_from as $_smarty_tpl->tpl_vars['rowArray']->key => $_smarty_tpl->tpl_vars['rowArray']->value) {
 $_smarty_tpl->tpl_vars['rowArray']->_loop = true;
+ $_smarty_tpl->tpl_vars['rowArray']->index++;
 ?>
     		 <?php  $_smarty_tpl->tpl_vars['typeValArray'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['typeValArray']->_loop = false;
  $_smarty_tpl->tpl_vars['typeStr'] = new Smarty_Variable;
@@ -59,36 +61,57 @@ foreach ($_from as $_smarty_tpl->tpl_vars['typeValArray']->key => $_smarty_tpl->
 $_smarty_tpl->tpl_vars['typeValArray']->_loop = true;
  $_smarty_tpl->tpl_vars['typeStr']->value = $_smarty_tpl->tpl_vars['typeValArray']->key;
 ?>
-    		<dl class="filter_dl clearfix">
-    		 	<dt><?php echo $_smarty_tpl->tpl_vars['typeStr']->value;?>
+    		 	<?php if ($_smarty_tpl->tpl_vars['rowArray']->index>2) {?>
+	    		<dl class="filter_dl clearfix" style="display:none">
+	    		<?php } else { ?>
+	    		<dl class="filter_dl clearfix">
+	    		<?php }?>
+	    		 	<dt><?php echo $_smarty_tpl->tpl_vars['typeStr']->value;?>
 :</dt>   			
-    			<dd class="filterLimit"><a class="active" href="#">全部</a></dd>
-                <dd class="filter_dd" id="filter_dd">
-                    <ul>
-                    <?php  $_smarty_tpl->tpl_vars['typeVal'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['typeVal']->_loop = false;
+	    			<dd class="filterLimit"><a class="active" href="#">全部</a></dd>
+	                <dd class="filter_dd" id="filter_dd">
+	                    <ul>
+	                    <?php  $_smarty_tpl->tpl_vars['typeVal'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['typeVal']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['typeValArray']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['typeVal']->key => $_smarty_tpl->tpl_vars['typeVal']->value) {
 $_smarty_tpl->tpl_vars['typeVal']->_loop = true;
 ?>
-    					<li><a href="#" onclick="Aclick(this)" title="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['typeVal']->value)===null||$tmp==='' ? '' : $tmp);?>
+	    					<li><a href="#" onclick="Aclick(this)" title="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['typeVal']->value)===null||$tmp==='' ? '' : $tmp);?>
 " class="filter_lk"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['typeVal']->value)===null||$tmp==='' ? '' : $tmp);?>
 </a></li>
-    				<?php } ?>
-    			 	</ul>
-    			 	<?php if (count($_smarty_tpl->tpl_vars['typeValArray']->value)>10) {?>
-                    <div class="type_more fr">
-                        <span onclick="seeMore(this)" id="seeMore"><b></b>更多</span>
-                        <span onclick="seeLess(this)" id="seeLess" style="display: none"><b></b>收起</span>
-                    </div>
-                    <?php }?>
-                </dd>
-           </dl>
-            <?php } ?>
-    	<?php } ?>
+	    				<?php } ?>
+	    			 	</ul>
+	    			 	<?php if (count($_smarty_tpl->tpl_vars['typeValArray']->value)>10) {?>
+	                    <div class="type_more fr">
+	                        <span onclick="seeMore(this)" id="seeMore"><b></b>更多</span>
+	                        <span onclick="seeLess(this)" id="seeLess" style="display: none"><b></b>收起</span>
+	                    </div>
+	                    <?php }?>
+	                </dd>
+	           </dl>
+			<?php } ?> <?php } ?>
+			
 </div>
 
+			<div class="moreProp" onclick="moreProp(this);" id="moreProp" style="display: block;">
+				<div class="attr-extra">
+					<div>
+						更多选项<b></b>
+					</div>
+				</div>
+			</div>
+            <div class="lessProp" onclick="lessProp(this);" id="lessProp" style="display: none;">
+                <div class="attr-extra">
+                    <div>
+                        收起<b></b>
+                    </div>
+                </div>
+            </div>
+
+
 <div class="f_Body_SortByArea comWidth">
-    <span class="item_sortBy_number fl">共&nbsp;<b style="color:darkred">1000</b>&nbsp;部</span>
+    <span class="item_sortBy_number fl">共&nbsp;<b style="color:darkred"><?php echo count($_smarty_tpl->tpl_vars['mInfo']->value);?>
+</b>&nbsp;部</span>
     <span class="item_sortBy_title fl">排序：</span>
     <ul>
         <li><a href="#">更新日期↑↓</a></li>
@@ -130,7 +153,7 @@ $_smarty_tpl->tpl_vars['movie']->_loop = true;
 
 </div>
 <?php echo '<script'; ?>
->
+ type="text/javascript">
     function seeMore(obj){
     	var filter_dd=$(obj).parent().parent();
     	filter_dd.height('auto');
@@ -142,11 +165,32 @@ $_smarty_tpl->tpl_vars['movie']->_loop = true;
     function seeLess(obj){
         var filter_dd=$(obj).parent().parent();
     	filter_dd.height('15px');
-
     	$(obj).hide();
         $(obj).parent().find("span[id='seeMore']").show();
         
     };
+
+    function moreProp(obj){
+        $('.filter_dl').show();
+        $('.moreProp').hide();
+        $('.lessProp').show();
+    };
+
+    function lessProp(obj){
+
+        var i=1;
+        $(".filter_dl").each(function(){
+            if (i>3){
+                $(this).hide();
+            }
+
+            i++;
+        });
+
+        $('.moreProp').show();
+        $(obj).hide();
+    };
+
 
     function Aclick(obj){
     	$(obj).attr('class','active');

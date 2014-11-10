@@ -14,29 +14,49 @@
     <h3>电影筛选</h3>
     	{foreach $configAll as $rowArray}
     		 {foreach $rowArray as $typeStr=>$typeValArray}
-    		<dl class="filter_dl clearfix">
-    		 	<dt>{$typeStr}:</dt>   			
-    			<dd class="filterLimit"><a class="active" href="#">全部</a></dd>
-                <dd class="filter_dd" id="filter_dd">
-                    <ul>
-                    {foreach $typeValArray as $typeVal}
-    					<li><a href="#" onclick="Aclick(this)" title="{$typeVal|default:''}" class="filter_lk">{$typeVal|default:''}</a></li>
-    				{/foreach}
-    			 	</ul>
-    			 	{if $typeValArray|@count >10}
-                    <div class="type_more fr">
-                        <span onclick="seeMore(this)" id="seeMore"><b></b>更多</span>
-                        <span onclick="seeLess(this)" id="seeLess" style="display: none"><b></b>收起</span>
-                    </div>
-                    {/if}
-                </dd>
-           </dl>
-            {/foreach}
-    	{/foreach}
+    		 	{if $rowArray@index > 2}
+	    		<dl class="filter_dl clearfix" style="display:none">
+	    		{else}
+	    		<dl class="filter_dl clearfix">
+	    		{/if}
+	    		 	<dt>{$typeStr}:</dt>   			
+	    			<dd class="filterLimit"><a class="active" href="#">全部</a></dd>
+	                <dd class="filter_dd" id="filter_dd">
+	                    <ul>
+	                    {foreach $typeValArray as $typeVal}
+	    					<li><a href="#" onclick="Aclick(this)" title="{$typeVal|default:''}" class="filter_lk">{$typeVal|default:''}</a></li>
+	    				{/foreach}
+	    			 	</ul>
+	    			 	{if $typeValArray|@count>10}
+	                    <div class="type_more fr">
+	                        <span onclick="seeMore(this)" id="seeMore"><b></b>更多</span>
+	                        <span onclick="seeLess(this)" id="seeLess" style="display: none"><b></b>收起</span>
+	                    </div>
+	                    {/if}
+	                </dd>
+	           </dl>
+			{/foreach} {/foreach}
+			
 </div>
 
+			<div class="moreProp" onclick="moreProp(this);" id="moreProp" style="display: block;">
+				<div class="attr-extra">
+					<div>
+						更多选项<b></b>
+					</div>
+				</div>
+			</div>
+            <div class="lessProp" onclick="lessProp(this);" id="lessProp" style="display: none;">
+                <div class="attr-extra">
+                    <div>
+                        收起<b></b>
+                    </div>
+                </div>
+            </div>
+
+
 <div class="f_Body_SortByArea comWidth">
-    <span class="item_sortBy_number fl">共&nbsp;<b style="color:darkred">1000</b>&nbsp;部</span>
+    <span class="item_sortBy_number fl">共&nbsp;<b style="color:darkred">{$mInfo|count}</b>&nbsp;部</span>
     <span class="item_sortBy_title fl">排序：</span>
     <ul>
         <li><a href="#">更新日期↑↓</a></li>
@@ -70,7 +90,7 @@
 <div class="f_Footer fl" style="height:50px;width: 100%;background-color:#45729B" >
 
 </div>
-<script>
+<script type="text/javascript">
     function seeMore(obj){
     	var filter_dd=$(obj).parent().parent();
     	filter_dd.height('auto');
@@ -82,11 +102,32 @@
     function seeLess(obj){
         var filter_dd=$(obj).parent().parent();
     	filter_dd.height('15px');
-
     	$(obj).hide();
         $(obj).parent().find("span[id='seeMore']").show();
         
     };
+
+    function moreProp(obj){
+        $('.filter_dl').show();
+        $('.moreProp').hide();
+        $('.lessProp').show();
+    };
+
+    function lessProp(obj){
+
+        var i=1;
+        $(".filter_dl").each(function(){
+            if (i>3){
+                $(this).hide();
+            }
+
+            i++;
+        });
+
+        $('.moreProp').show();
+        $(obj).hide();
+    };
+
 
     function Aclick(obj){
     	$(obj).attr('class','active');

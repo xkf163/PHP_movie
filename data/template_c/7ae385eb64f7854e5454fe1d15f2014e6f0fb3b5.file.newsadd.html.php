@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 09:27:10
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 14:24:05
          compiled from "tpl\admin\newsadd.html" */ ?>
 <?php /*%%SmartyHeaderCode:2987654508d32869aa2-98326612%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ae385eb64f7854e5454fe1d15f2014e6f0fb3b5' => 
     array (
       0 => 'tpl\\admin\\newsadd.html',
-      1 => 1415608025,
+      1 => 1415625841,
       2 => 'file',
     ),
   ),
@@ -124,40 +124,55 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<article class="module width_full">
 				<header><h3>添加新电影</h3></header>
 					<div class="module_content">
-							<fieldset>
-								<label>片名</label>
-								<input type="text" name="mtitle" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mtitle'])===null||$tmp==='' ? '' : $tmp);?>
-">								
+							<fieldset style="width:31%; float:left;margin-right: 3%;">
+								<label>中文片名</label>
+								<input type="text" name="mtitle" style="width:70%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mtitle'])===null||$tmp==='' ? '' : $tmp);?>
+">
+							</fieldset>
+							<fieldset style="width:31%; float:left;margin-right: 3%;">
+								<label>外文片名</label>
+								<input type="text" name="mforeigntitle" style="width:85%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mforeigntitle'])===null||$tmp==='' ? '' : $tmp);?>
+">
+							</fieldset>
+							<fieldset style="width:31%; float:left">
+								<label>其他片名</label>
+								<input type="text" name="mothertitle" style="width:85%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mothertitle'])===null||$tmp==='' ? '' : $tmp);?>
+">
 							</fieldset>
 							
-							<fieldset style="width:13%; float:left;margin-right: 3%;">
+							<fieldset style="width:13%; float:left;margin-right: 1%;">
 								<label>IMDB编号</label>
 								<input type="text" name="imdb" style="width:70%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['imdb'])===null||$tmp==='' ? '' : $tmp);?>
 ">	
 							</fieldset>
-							<fieldset style="width:13%; float:left;margin-right: 3%;">
+							<fieldset style="width:13%; float:left;margin-right: 1%;">
 								<label>本站编号</label>
 								<input type="text" name="mno" style="width:70%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mno'])===null||$tmp==='' ? '' : $tmp);?>
 ">	
 							</fieldset>
-							<fieldset style="width:10%; float:left;margin-right: 3%;">
+							<fieldset style="width:10%; float:left;margin-right: 1%;">
 								<label>年代</label>
 								<input type="text" name="myear"  style="width:66%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['myear'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							<fieldset style="width:9%; float:left;margin-right: 3%;">
+							<fieldset style="width:9%; float:left;margin-right: 1%;">
 								<label>IMDB评分</label>
 								<input type="text" name="mrating" style="width:66%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mrating'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							<fieldset style="width:10%; float:left;margin-right: 3%;">
+							<fieldset style="width:10%; float:left;margin-right: 1%;">
 								<label>片长[分钟]</label>
 								<input type="text" name="mtime" style="width:70%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mtime'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							<fieldset style="width:15%; float:left;margin-right: 3%;">
+							<fieldset style="width:10%; float:left;margin-right: 1%;">
 								<label>分级</label>
 								<input type="text" name="mlevel" style="width:80%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mlevel'])===null||$tmp==='' ? '' : $tmp);?>
+">
+							</fieldset>
+							<fieldset style="width:16%; float:left;margin-right: 1%;">
+								<label>片商</label>
+								<input type="text" name="mentertainment" style="width:80%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mentertainment'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
 							<fieldset style="width:10%; float:left;">
@@ -188,24 +203,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
 							</fieldset>
 							
-							<fieldset>
+							<fieldset style="width:100%; float:left;">
 								<label>主演</label>
 								<input type="text" name="mcast" style="width:98%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mcast'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
 							
 							
-							<fieldset style="width:30%; float:left;margin-right: 3%;">
+							<fieldset style="width:31%; float:left;margin-right: 3%;">
 								<label>上映日期</label>
-								<input type="text" name="mcolor" style="width:70%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mcolor'])===null||$tmp==='' ? '' : $tmp);?>
+								<input type="text" name="mreleasedate" style="width:70%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mreleasedate'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							<fieldset style="width:30%; float:left;margin-right: 3%;">
+							<fieldset style="width:31%; float:left;margin-right: 3%;">
 								<label>国家/地区</label>
 								<input type="text" name="marea" style="width:85%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['marea'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							<fieldset style="width:32%; float:left">
+							<fieldset style="width:31%; float:left">
 								<label>语言</label>
 								<input type="text" name="mlang" style="width:85%;"  value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mlang'])===null||$tmp==='' ? '' : $tmp);?>
 ">
@@ -213,12 +228,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							
 							
 							
-							<fieldset>								
+							<fieldset style="width:100%; float:left;">								
 								<textarea name="content" id="content"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['content'])===null||$tmp==='' ? '' : $tmp);?>
 </textarea>
 							</fieldset>
 							
-							<fieldset style="width:48%; float:left;">
+							<fieldset style="width:48%; float:left;margin-right: 3%;">
 								<label>创建时间</label>
 								<input type="text" name="mcreatedate" style="width:92%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mcreatedate'])===null||$tmp==='' ? '' : $tmp);?>
 ">
@@ -228,7 +243,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								<input type="text" name="mmodifydate" style="width:92%;" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['mmodifydate'])===null||$tmp==='' ? '' : $tmp);?>
 ">
 							</fieldset>
-							<fieldset>		
+							<fieldset style="width:99%; float:left;">		
                                 <input name="attachment" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['attachment'])===null||$tmp==='' ? '' : $tmp);?>
 " type="file" />
 								<input name="attachment1" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['attachment'])===null||$tmp==='' ? '' : $tmp);?>

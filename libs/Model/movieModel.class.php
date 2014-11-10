@@ -43,7 +43,10 @@ class movieModel{
 		$mlang=daddslashes($mlang);
 		$mlevel=daddslashes($mlevel);
 		$mcolor=daddslashes($mcolor);
-		
+		$mothertitle=daddslashes($mothertitle);
+		$mforeigntitle=daddslashes($mforeigntitle);
+		$mentertainment=daddslashes($mentertainment);
+		$mreleasedate=daddslashes($mreleasedate);
 		
 		if(empty($mcreatedate)){
 			$mcreatedate=date("Y:m:d H:m:s",time());
@@ -63,6 +66,8 @@ class movieModel{
 
 		$data=array(
 				'mtitle'=>$mtitle,
+				'mothertitle'=>$mothertitle, //其他译名
+				'mforeigntitle'=>$mforeigntitle, 
 				'myear'=>$myear,
 				'mdirector'=>$mdirector,
 				'mno'=>$mno,
@@ -77,6 +82,8 @@ class movieModel{
 				'mlang'=>$mlang,
 				'mlevel'=>$mlevel,
 				'mcolor'=>$mcolor,
+				'mreleasedate'=>$mreleasedate,
+				'mentertainment'=>$mentertainment,
 				'mcreatedate'=>$mcreatedate,
 				'mmodifydate'=>$mmodifydate,
 				'attachment'=>$newAttachment,

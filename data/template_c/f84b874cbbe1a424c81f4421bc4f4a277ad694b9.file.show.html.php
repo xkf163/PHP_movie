@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 09:33:19
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 13:20:55
          compiled from "tpl\index\show.html" */ ?>
 <?php /*%%SmartyHeaderCode:29835545774cd5a0d19-52258545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f84b874cbbe1a424c81f4421bc4f4a277ad694b9' => 
     array (
       0 => 'tpl\\index\\show.html',
-      1 => 1415608396,
+      1 => 1415622051,
       2 => 'file',
     ),
   ),
@@ -23,16 +23,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'attachment' => 0,
     'myear' => 0,
     'mrating' => 0,
+    'mothertitle' => 0,
+    'othertitle' => 0,
     'mcategory' => 0,
     'category' => 0,
     'mdirector' => 0,
     'director' => 0,
     'mwriter' => 0,
+    'writer' => 0,
+    'mproducer' => 0,
+    'producer' => 0,
     'mcast' => 0,
     'cast' => 0,
+    'mreleasedate' => 0,
+    'marea' => 0,
+    'area' => 0,
+    'mlang' => 0,
+    'lang' => 0,
     'mtime' => 0,
     'mlevel' => 0,
     'mcolor' => 0,
+    'mentertainment' => 0,
+    'entertainment' => 0,
     'imdb' => 0,
   ),
   'has_nocache_code' => false,
@@ -72,41 +84,70 @@ $_valid = $_smarty_tpl->decodeProperties(array (
               </div>
             <div class="pg_time_type clearfix">
                 <dl class="item">
-                    <dt><span>译名:</span></dt>
+                    <dt><span>其它片名:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">Yi Yi</a><i>|</i></li>
-                            <li><a href="#">A One and a Two</a></li>
+                        		<?php  $_smarty_tpl->tpl_vars['othertitle'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['othertitle']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mothertitle']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['othertitle']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['othertitle']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['othertitle']->key => $_smarty_tpl->tpl_vars['othertitle']->value) {
+$_smarty_tpl->tpl_vars['othertitle']->_loop = true;
+ $_smarty_tpl->tpl_vars['othertitle']->iteration++;
+ $_smarty_tpl->tpl_vars['othertitle']->last = $_smarty_tpl->tpl_vars['othertitle']->iteration === $_smarty_tpl->tpl_vars['othertitle']->total;
+?> <?php if ($_smarty_tpl->tpl_vars['othertitle']->last) {?>
+								<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['othertitle']->value;?>
+</a></li> <?php } else { ?>
+								<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['othertitle']->value;?>
+</a><i>|</i></li> <?php }?> <?php } ?>
+                            
                         </ul>
                     </dd>
                 </dl>
 
-                <dl class="item">
-                    <dt><span>类型:</span></dt>
-                    <dd>
-                        <ul class="pg_time_type-ul">
-                        <?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
+					<dl class="item">
+						<dt>
+							<span>类型:</span>
+						</dt>
+						<dd>
+							<ul class="pg_time_type-ul">
+								<?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['mcategory']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['category']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['category']->iteration=0;
 foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->_loop = true;
-?>                        
-                        	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['category']->value;?>
-</a><i>|</i></li>                            
-						<?php } ?>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl class="item">
+ $_smarty_tpl->tpl_vars['category']->iteration++;
+ $_smarty_tpl->tpl_vars['category']->last = $_smarty_tpl->tpl_vars['category']->iteration === $_smarty_tpl->tpl_vars['category']->total;
+?> <?php if ($_smarty_tpl->tpl_vars['category']->last) {?>
+								<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['category']->value;?>
+</a></li> <?php } else { ?>
+								<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['category']->value;?>
+</a><i>|</i></li> <?php }?> <?php } ?>
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="item">
                     <dt><span>导演:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
                         	<?php  $_smarty_tpl->tpl_vars['director'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['director']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['mdirector']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['director']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['director']->iteration=0;
 foreach ($_from as $_smarty_tpl->tpl_vars['director']->key => $_smarty_tpl->tpl_vars['director']->value) {
 $_smarty_tpl->tpl_vars['director']->_loop = true;
+ $_smarty_tpl->tpl_vars['director']->iteration++;
+ $_smarty_tpl->tpl_vars['director']->last = $_smarty_tpl->tpl_vars['director']->iteration === $_smarty_tpl->tpl_vars['director']->total;
 ?>
-                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['director']->value;?>
+                        		<?php if ($_smarty_tpl->tpl_vars['director']->last) {?>
+                            	<li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['director']->value;?>
+</a></li>
+                            	<?php } else { ?>
+                            	<li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['director']->value;?>
 </a><i>|</i></li>
+                            	<?php }?>
                             <?php } ?>
                         </ul>
                     </dd>
@@ -115,8 +156,23 @@ $_smarty_tpl->tpl_vars['director']->_loop = true;
                     <dt><span>编剧:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['mwriter']->value[0];?>
+	                    <?php  $_smarty_tpl->tpl_vars['writer'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['writer']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mwriter']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['writer']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['writer']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['writer']->key => $_smarty_tpl->tpl_vars['writer']->value) {
+$_smarty_tpl->tpl_vars['writer']->_loop = true;
+ $_smarty_tpl->tpl_vars['writer']->iteration++;
+ $_smarty_tpl->tpl_vars['writer']->last = $_smarty_tpl->tpl_vars['writer']->iteration === $_smarty_tpl->tpl_vars['writer']->total;
+?>
+	                    	<?php if ($_smarty_tpl->tpl_vars['writer']->last) {?>
+	                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['writer']->value;?>
+</a></li>
+	                        <?php } else { ?>
+	                        	<li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['writer']->value;?>
 </a><i>|</i></li>
+	                        <?php }?>
+	                    <?php } ?>
                         </ul>
                     </dd>
                 </dl>
@@ -124,8 +180,23 @@ $_smarty_tpl->tpl_vars['director']->_loop = true;
                     <dt><span>制片人:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">河井真也</a><i>|</i></li>
-                            <li><a href="#">余为彦</a></li>
+                             <?php  $_smarty_tpl->tpl_vars['producer'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['producer']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mproducer']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['producer']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['producer']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['producer']->key => $_smarty_tpl->tpl_vars['producer']->value) {
+$_smarty_tpl->tpl_vars['producer']->_loop = true;
+ $_smarty_tpl->tpl_vars['producer']->iteration++;
+ $_smarty_tpl->tpl_vars['producer']->last = $_smarty_tpl->tpl_vars['producer']->iteration === $_smarty_tpl->tpl_vars['producer']->total;
+?>
+	                    	<?php if ($_smarty_tpl->tpl_vars['producer']->last) {?>
+	                            <li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['producer']->value;?>
+</a></li>
+	                        <?php } else { ?>
+	                        	<li><a href="director.html" target="_blank"><?php echo $_smarty_tpl->tpl_vars['producer']->value;?>
+</a><i>|</i></li>
+	                        <?php }?>
+	                    <?php } ?>
                         </ul>
                     </dd>
                 </dl>
@@ -135,11 +206,20 @@ $_smarty_tpl->tpl_vars['director']->_loop = true;
                         <ul class="pg_time_type-ul">
                         <?php  $_smarty_tpl->tpl_vars['cast'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cast']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['mcast']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['cast']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['cast']->iteration=0;
 foreach ($_from as $_smarty_tpl->tpl_vars['cast']->key => $_smarty_tpl->tpl_vars['cast']->value) {
 $_smarty_tpl->tpl_vars['cast']->_loop = true;
+ $_smarty_tpl->tpl_vars['cast']->iteration++;
+ $_smarty_tpl->tpl_vars['cast']->last = $_smarty_tpl->tpl_vars['cast']->iteration === $_smarty_tpl->tpl_vars['cast']->total;
 ?>
+                        	<?php if ($_smarty_tpl->tpl_vars['cast']->last) {?>
+                            <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['cast']->value;?>
+</a></li>
+                            <?php } else { ?>
                             <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['cast']->value;?>
 </a><i>|</i></li>
+                            <?php }?>
                          <?php } ?>
                         </ul>
                     </dd>
@@ -147,9 +227,9 @@ $_smarty_tpl->tpl_vars['cast']->_loop = true;
                 <dl class="item">
                     <dt><span>上映日期:</span></dt>
                     <dd>
-                        <ul class="pg_time_type-ul">
-                            <li>2010-05-14</li>
-
+                        <ul class="pg_time_type-ul">                     
+                            <li><?php echo $_smarty_tpl->tpl_vars['mreleasedate']->value[0];?>
+</li>
                         </ul>
                     </dd>
                 </dl>
@@ -157,9 +237,23 @@ $_smarty_tpl->tpl_vars['cast']->_loop = true;
                     <dt><span>国家/地区:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">台湾</a><i>|</i></li>
-                            <li><a href="#">日本</a></li>
-
+                          <?php  $_smarty_tpl->tpl_vars['area'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['area']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['marea']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['area']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['area']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['area']->key => $_smarty_tpl->tpl_vars['area']->value) {
+$_smarty_tpl->tpl_vars['area']->_loop = true;
+ $_smarty_tpl->tpl_vars['area']->iteration++;
+ $_smarty_tpl->tpl_vars['area']->last = $_smarty_tpl->tpl_vars['area']->iteration === $_smarty_tpl->tpl_vars['area']->total;
+?>
+                        	<?php if ($_smarty_tpl->tpl_vars['area']->last) {?>
+                        	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['area']->value;?>
+</a></li>
+                        	<?php } else { ?>
+                        	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['area']->value;?>
+</a><i>|</i></li>
+                        	<?php }?>
+                         <?php } ?>                      
                         </ul>
                     </dd>
                 </dl>
@@ -167,11 +261,23 @@ $_smarty_tpl->tpl_vars['cast']->_loop = true;
                     <dt><span>语言:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">汉语</a><i>|</i></li>
-                            <li><a href="#">普通话</a><i>|</i></li>
-                            <li><a href="#">闽南话</a><i>|</i></li>
-                            <li><a href="#">英语</a><i>|</i></li>
-                            <li><a href="#">日语</a></li>
+                         <?php  $_smarty_tpl->tpl_vars['lang'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lang']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mlang']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['lang']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['lang']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['lang']->key => $_smarty_tpl->tpl_vars['lang']->value) {
+$_smarty_tpl->tpl_vars['lang']->_loop = true;
+ $_smarty_tpl->tpl_vars['lang']->iteration++;
+ $_smarty_tpl->tpl_vars['lang']->last = $_smarty_tpl->tpl_vars['lang']->iteration === $_smarty_tpl->tpl_vars['lang']->total;
+?>
+                        	<?php if ($_smarty_tpl->tpl_vars['lang']->last) {?>
+                        	   	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['lang']->value;?>
+</a></li>
+                        	<?php } else { ?>
+                        	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['lang']->value;?>
+</a><i>|</i></li>
+                        	<?php }?>
+                         <?php } ?>                        
                         </ul>
                     </dd>
                 </dl>
@@ -208,7 +314,24 @@ $_smarty_tpl->tpl_vars['cast']->_loop = true;
                     <dt><span>片商:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">Omega Project</a></li>
+                          <?php  $_smarty_tpl->tpl_vars['entertainment'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['entertainment']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mentertainment']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['entertainment']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['entertainment']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['entertainment']->key => $_smarty_tpl->tpl_vars['entertainment']->value) {
+$_smarty_tpl->tpl_vars['entertainment']->_loop = true;
+ $_smarty_tpl->tpl_vars['entertainment']->iteration++;
+ $_smarty_tpl->tpl_vars['entertainment']->last = $_smarty_tpl->tpl_vars['entertainment']->iteration === $_smarty_tpl->tpl_vars['entertainment']->total;
+?>
+                        	<?php if ($_smarty_tpl->tpl_vars['entertainment']->last) {?>
+                        	   	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['entertainment']->value;?>
+</a></li>
+                        	<?php } else { ?>
+                        	<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['entertainment']->value;?>
+</a><i>|</i></li>
+                        	<?php }?>
+                         <?php } ?>        
+                            
                         </ul>
                     </dd>
                 </dl>
@@ -216,7 +339,7 @@ $_smarty_tpl->tpl_vars['cast']->_loop = true;
                     <dt><span>IMDB编号:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">tt<?php echo $_smarty_tpl->tpl_vars['imdb']->value[0];?>
+                            <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['imdb']->value[0];?>
 </a></li>
                         </ul>
                     </dd>

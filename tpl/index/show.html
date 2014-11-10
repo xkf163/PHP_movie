@@ -28,31 +28,40 @@
               </div>
             <div class="pg_time_type clearfix">
                 <dl class="item">
-                    <dt><span>译名:</span></dt>
+                    <dt><span>其它片名:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">Yi Yi</a><i>|</i></li>
-                            <li><a href="#">A One and a Two</a></li>
+                        		{foreach $mothertitle as $othertitle} {if $othertitle@last}
+								<li><a href="#">{$othertitle}</a></li> {else}
+								<li><a href="#">{$othertitle}</a><i>|</i></li> {/if} {/foreach}
+                            
                         </ul>
                     </dd>
                 </dl>
 
-                <dl class="item">
-                    <dt><span>类型:</span></dt>
-                    <dd>
-                        <ul class="pg_time_type-ul">
-                        {foreach $mcategory as $category}                        
-                        	<li><a href="#">{$category}</a><i>|</i></li>                            
-						{/foreach}
-                        </ul>
-                    </dd>
-                </dl>
-                <dl class="item">
+					<dl class="item">
+						<dt>
+							<span>类型:</span>
+						</dt>
+						<dd>
+							<ul class="pg_time_type-ul">
+								{foreach $mcategory as $category} {if $category@last}
+								<li><a href="#">{$category}</a></li> {else}
+								<li><a href="#">{$category}</a><i>|</i></li> {/if} {/foreach}
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="item">
                     <dt><span>导演:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
                         	{foreach $mdirector as $director }
-                            <li><a href="director.html" target="_blank">{$director}</a><i>|</i></li>
+                        		{if $director@last}
+                            	<li><a href="director.html" target="_blank">{$director}</a></li>
+                            	{else}
+                            	<li><a href="director.html" target="_blank">{$director}</a><i>|</i></li>
+                            	{/if}
                             {/foreach}
                         </ul>
                     </dd>
@@ -61,7 +70,13 @@
                     <dt><span>编剧:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="director.html" target="_blank">{$mwriter[0]}</a><i>|</i></li>
+	                    {foreach $mwriter as $writer }
+	                    	{if $writer@last}
+	                            <li><a href="director.html" target="_blank">{$writer}</a></li>
+	                        {else}
+	                        	<li><a href="director.html" target="_blank">{$writer}</a><i>|</i></li>
+	                        {/if}
+	                    {/foreach}
                         </ul>
                     </dd>
                 </dl>
@@ -69,8 +84,13 @@
                     <dt><span>制片人:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">河井真也</a><i>|</i></li>
-                            <li><a href="#">余为彦</a></li>
+                             {foreach $mproducer as $producer }
+	                    	{if $producer@last}
+	                            <li><a href="director.html" target="_blank">{$producer}</a></li>
+	                        {else}
+	                        	<li><a href="director.html" target="_blank">{$producer}</a><i>|</i></li>
+	                        {/if}
+	                    {/foreach}
                         </ul>
                     </dd>
                 </dl>
@@ -79,7 +99,11 @@
                     <dd>
                         <ul class="pg_time_type-ul">
                         {foreach $mcast as $cast }
+                        	{if $cast@last}
+                            <li><a href="#">{$cast}</a></li>
+                            {else}
                             <li><a href="#">{$cast}</a><i>|</i></li>
+                            {/if}
                          {/foreach}
                         </ul>
                     </dd>
@@ -87,9 +111,8 @@
                 <dl class="item">
                     <dt><span>上映日期:</span></dt>
                     <dd>
-                        <ul class="pg_time_type-ul">
-                            <li>2010-05-14</li>
-
+                        <ul class="pg_time_type-ul">                     
+                            <li>{$mreleasedate[0]}</li>
                         </ul>
                     </dd>
                 </dl>
@@ -97,9 +120,13 @@
                     <dt><span>国家/地区:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">台湾</a><i>|</i></li>
-                            <li><a href="#">日本</a></li>
-
+                          {foreach $marea as $area }
+                        	{if $area@last}
+                        	<li><a href="#">{$area}</a></li>
+                        	{else}
+                        	<li><a href="#">{$area}</a><i>|</i></li>
+                        	{/if}
+                         {/foreach}                      
                         </ul>
                     </dd>
                 </dl>
@@ -107,11 +134,13 @@
                     <dt><span>语言:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">汉语</a><i>|</i></li>
-                            <li><a href="#">普通话</a><i>|</i></li>
-                            <li><a href="#">闽南话</a><i>|</i></li>
-                            <li><a href="#">英语</a><i>|</i></li>
-                            <li><a href="#">日语</a></li>
+                         {foreach $mlang as $lang }
+                        	{if $lang@last}
+                        	   	<li><a href="#">{$lang}</a></li>
+                        	{else}
+                        	<li><a href="#">{$lang}</a><i>|</i></li>
+                        	{/if}
+                         {/foreach}                        
                         </ul>
                     </dd>
                 </dl>
@@ -145,7 +174,14 @@
                     <dt><span>片商:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">Omega Project</a></li>
+                          {foreach $mentertainment as $entertainment }
+                        	{if $entertainment@last}
+                        	   	<li><a href="#">{$entertainment}</a></li>
+                        	{else}
+                        	<li><a href="#">{$entertainment}</a><i>|</i></li>
+                        	{/if}
+                         {/foreach}        
+                            
                         </ul>
                     </dd>
                 </dl>
@@ -153,7 +189,7 @@
                     <dt><span>IMDB编号:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
-                            <li><a href="#">tt{$imdb[0]}</a></li>
+                            <li><a href="#">{$imdb[0]}</a></li>
                         </ul>
                     </dd>
                 </dl>

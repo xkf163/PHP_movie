@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-10-29 06:19:50
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 16:48:55
          compiled from "tpl\admin\newslist.html" */ ?>
 <?php /*%%SmartyHeaderCode:28475545078f6d72184-61256207%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9a6c775c58cfdad84396520e12628f01c022d0d0' => 
     array (
       0 => 'tpl\\admin\\newslist.html',
-      1 => 1414497304,
+      1 => 1415634532,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_545078f6e83886_04113868',
   'variables' => 
   array (
     'data' => 0,
     'value' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_545078f6e83886_04113868',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_545078f6e83886_04113868')) {function content_545078f6e83886_04113868($_smarty_tpl) {?><!doctype html>
 <html>
@@ -132,11 +132,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<tbody>
 					<?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['value']->index=-1;
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value) {
 $_smarty_tpl->tpl_vars['value']->_loop = true;
+ $_smarty_tpl->tpl_vars['value']->index++;
 ?>
 						<tr>
-			    				<td><?php echo $_smarty_tpl->tpl_vars['value']->value['uid'];?>
+			    				<td><?php echo $_smarty_tpl->tpl_vars['value']->index+1;?>
 </td> 
 			    				<td><?php echo $_smarty_tpl->tpl_vars['value']->value['mtitle'];?>
 </td> 
