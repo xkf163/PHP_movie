@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-05 14:24:41
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 09:27:10
          compiled from "tpl\admin\newsadd.html" */ ?>
 <?php /*%%SmartyHeaderCode:2987654508d32869aa2-98326612%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ae385eb64f7854e5454fe1d15f2014e6f0fb3b5' => 
     array (
       0 => 'tpl\\admin\\newsadd.html',
-      1 => 1415193656,
+      1 => 1415608025,
       2 => 'file',
     ),
   ),
@@ -229,8 +229,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
 							</fieldset>
 							<fieldset>		
-                                 <input name="attachment" type="file"/>
-
+                                <input name="attachment" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['attachment'])===null||$tmp==='' ? '' : $tmp);?>
+" type="file" />
+								<input name="attachment1" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['data']->value['attachment'])===null||$tmp==='' ? '' : $tmp);?>
+" type="text" />
 							</fieldset>
 							<div class="clear"></div>
 					</div>

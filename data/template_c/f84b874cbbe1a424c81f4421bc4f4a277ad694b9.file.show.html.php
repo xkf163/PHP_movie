@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-05 15:43:26
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 09:33:19
          compiled from "tpl\index\show.html" */ ?>
 <?php /*%%SmartyHeaderCode:29835545774cd5a0d19-52258545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f84b874cbbe1a424c81f4421bc4f4a277ad694b9' => 
     array (
       0 => 'tpl\\index\\show.html',
-      1 => 1415198605,
+      1 => 1415608396,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'mtitle' => 0,
-    'imgpath' => 0,
+    'attachment' => 0,
     'myear' => 0,
     'mrating' => 0,
     'mcategory' => 0,
@@ -57,7 +57,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>-->
     <div class="filmHeader comWidth clearfix">
         <div class="filmHeader_img fl">
-            <img src="<?php echo $_smarty_tpl->tpl_vars['imgpath']->value[0];?>
+            <img src="<?php echo $_smarty_tpl->tpl_vars['attachment']->value[0];?>
 " alt=""/>
         </div>
         <div class="filmHeader_info fl">
