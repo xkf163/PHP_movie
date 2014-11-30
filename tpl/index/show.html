@@ -27,7 +27,28 @@
                   <div class="rate fr">{$mrating[0]}</div>
               </div>
             <div class="pg_time_type clearfix">
+            
+             	{if $mforeigntitle[0]|count_characters>0}
                 <dl class="item">
+                {else}
+                <dl class="item" style="display:none">
+                {/if}
+                    <dt><span>外文名:</span></dt>
+                    <dd>
+                        <ul class="pg_time_type-ul">
+                        		{foreach $mforeigntitle as $foreigntitle} {if $foreigntitle@last}
+								<li><a href="#">{$foreigntitle}</a></li> {else}
+								<li><a href="#">{$foreigntitle}</a><i>|</i></li> {/if} {/foreach}
+                            
+                        </ul>
+                    </dd>
+                </dl>
+                
+                {if $mothertitle[0]|count_characters>0}
+                <dl class="item">
+                {else}
+                <dl class="item" style="display:none">
+                {/if}
                     <dt><span>其它片名:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -66,7 +87,11 @@
                         </ul>
                     </dd>
                 </dl>
+                {if $mwriter[0]|count_characters>0}
                 <dl class="item">
+                {else}
+                <dl class="item" style="display:none">
+                {/if}
                     <dt><span>编剧:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -80,7 +105,14 @@
                         </ul>
                     </dd>
                 </dl>
+                
+               
+                
+                {if $mproducer[0]|count_characters>0}
                 <dl class="item">
+                {else}
+                <dl class="item" style="display:none">
+                {/if}
                     <dt><span>制片人:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -153,8 +185,11 @@
                     </dd>
                 </dl>
 
-
+				{if $mlevel[0]|count_characters>0}
                 <dl class="item">
+                {else}
+                <dl class="item" style="display:none">
+                {/if}
                     <dt><span>分级:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -170,7 +205,12 @@
                         </ul>
                     </dd>
                 </dl>
+                
+ 				{if $mentertainment[0]|count_characters>0}
                 <dl class="item">
+                {else}
+                <dl class="item" style="display:none">
+                {/if}
                     <dt><span>片商:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">

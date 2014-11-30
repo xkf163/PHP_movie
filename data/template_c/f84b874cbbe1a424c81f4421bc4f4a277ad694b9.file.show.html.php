@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-10 13:20:55
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2014-11-19 06:24:30
          compiled from "tpl\index\show.html" */ ?>
 <?php /*%%SmartyHeaderCode:29835545774cd5a0d19-52258545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f84b874cbbe1a424c81f4421bc4f4a277ad694b9' => 
     array (
       0 => 'tpl\\index\\show.html',
-      1 => 1415622051,
+      1 => 1416374669,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'attachment' => 0,
     'myear' => 0,
     'mrating' => 0,
+    'mforeigntitle' => 0,
+    'foreigntitle' => 0,
     'mothertitle' => 0,
     'othertitle' => 0,
     'mcategory' => 0,
@@ -83,7 +85,38 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
               </div>
             <div class="pg_time_type clearfix">
+            
+             	<?php if (preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['mforeigntitle']->value[0], $tmp)>0) {?>
                 <dl class="item">
+                <?php } else { ?>
+                <dl class="item" style="display:none">
+                <?php }?>
+                    <dt><span>外文名:</span></dt>
+                    <dd>
+                        <ul class="pg_time_type-ul">
+                        		<?php  $_smarty_tpl->tpl_vars['foreigntitle'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foreigntitle']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['mforeigntitle']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['foreigntitle']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['foreigntitle']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['foreigntitle']->key => $_smarty_tpl->tpl_vars['foreigntitle']->value) {
+$_smarty_tpl->tpl_vars['foreigntitle']->_loop = true;
+ $_smarty_tpl->tpl_vars['foreigntitle']->iteration++;
+ $_smarty_tpl->tpl_vars['foreigntitle']->last = $_smarty_tpl->tpl_vars['foreigntitle']->iteration === $_smarty_tpl->tpl_vars['foreigntitle']->total;
+?> <?php if ($_smarty_tpl->tpl_vars['foreigntitle']->last) {?>
+								<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['foreigntitle']->value;?>
+</a></li> <?php } else { ?>
+								<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['foreigntitle']->value;?>
+</a><i>|</i></li> <?php }?> <?php } ?>
+                            
+                        </ul>
+                    </dd>
+                </dl>
+                
+                <?php if (preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['mothertitle']->value[0], $tmp)>0) {?>
+                <dl class="item">
+                <?php } else { ?>
+                <dl class="item" style="display:none">
+                <?php }?>
                     <dt><span>其它片名:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -152,7 +185,11 @@ $_smarty_tpl->tpl_vars['director']->_loop = true;
                         </ul>
                     </dd>
                 </dl>
+                <?php if (preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['mwriter']->value[0], $tmp)>0) {?>
                 <dl class="item">
+                <?php } else { ?>
+                <dl class="item" style="display:none">
+                <?php }?>
                     <dt><span>编剧:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -176,7 +213,14 @@ $_smarty_tpl->tpl_vars['writer']->_loop = true;
                         </ul>
                     </dd>
                 </dl>
+                
+               
+                
+                <?php if (preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['mproducer']->value[0], $tmp)>0) {?>
                 <dl class="item">
+                <?php } else { ?>
+                <dl class="item" style="display:none">
+                <?php }?>
                     <dt><span>制片人:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -291,8 +335,11 @@ $_smarty_tpl->tpl_vars['lang']->_loop = true;
                     </dd>
                 </dl>
 
-
+				<?php if (preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['mlevel']->value[0], $tmp)>0) {?>
                 <dl class="item">
+                <?php } else { ?>
+                <dl class="item" style="display:none">
+                <?php }?>
                     <dt><span>分级:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
@@ -310,7 +357,12 @@ $_smarty_tpl->tpl_vars['lang']->_loop = true;
                         </ul>
                     </dd>
                 </dl>
+                
+ 				<?php if (preg_match_all('/[^\s]/u',$_smarty_tpl->tpl_vars['mentertainment']->value[0], $tmp)>0) {?>
                 <dl class="item">
+                <?php } else { ?>
+                <dl class="item" style="display:none">
+                <?php }?>
                     <dt><span>片商:</span></dt>
                     <dd>
                         <ul class="pg_time_type-ul">
